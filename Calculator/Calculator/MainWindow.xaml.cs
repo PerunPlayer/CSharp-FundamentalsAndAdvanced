@@ -21,7 +21,17 @@ namespace Calculator
     public partial class MainWindow : Window
     {
         #region DataMembers
+        enum Operation
+        {
+            ADD,
+            SUBSTRACT,
+            MULTIPLY,
+            DEVIDE,
+            NO_OP
+        }
 
+        double number1 = 0, number2 = 0;
+        Operation operation = Operation.NO_OP;
         #endregion
         public MainWindow()
         {
