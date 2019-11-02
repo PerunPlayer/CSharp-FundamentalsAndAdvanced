@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Calculator
 {
@@ -30,6 +19,7 @@ namespace Calculator
             NO_OP
         }
 
+        double input = 0, result = 0;
         double number1 = 0, number2 = 0;
         Operation operation = Operation.NO_OP;
         #endregion
@@ -88,8 +78,8 @@ namespace Calculator
                 case Operation.SUBSTRACT: result = input - result; break;
                 case Operation.MULTIPLY: result = input * result; break;
                 case Operation.DEVIDE: result = input / result; break;
-                default Operation.NO_OP: 
-                    break;
+                case Operation.NO_OP: break;
+                default: break;
             }
         } 
         #endregion
