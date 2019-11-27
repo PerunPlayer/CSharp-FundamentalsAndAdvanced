@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="250" Width="550">
+        Title="Calculator" Height="270" Width="550">
     <StackPanel Orientation="Vertical" Margin="10">
         <!-- Input bos -->
         <TextBox Margin="0 0 20 0" x:Name="txtInput" Padding="5" Text="0" TextAlignment="Right" FontWeight="Bold"></TextBox>
@@ -40,7 +40,7 @@
                 <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Content="00" FontWeight="Bold" Margin="5" x:Name="btn00" Click="Digit_Click"/>
             </Grid>
             
-            <!-- Buttons -->
+            <!-- Operations -->
             <Grid Margin="20, 0, 20, 20" Width="80" Background="Gray">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -52,14 +52,47 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Content="+" FontWeight="Bold" Margin="5" x:Name="btnPlus" />
+                <Button Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Content="+" FontWeight="Bold" Margin="5" x:Name="btnPlus" Click="Operation_Click"/>
                 <Button Grid.Row="0" Grid.Column="1" Content="-" FontWeight="Bold" Margin="5" x:Name="btnMinus" Click="Operation_Click"/>
                 <Button Grid.Row="1" Grid.Column="1" Content="*" FontWeight="Bold" Margin="5" x:Name="btnProduct" Click="Operation_Click"/>
                 <Button Grid.Row="2" Grid.Column="1" Content="/" FontWeight="Bold" Margin="5" x:Name="btnDevide" Click="Operation_Click"/>
                 <Button Grid.Row="3" Grid.Column="0" Content="." FontWeight="Bold" Margin="5" x:Name="btnDecimalPoint" Click="Digit_Click"/>
                 <Button Grid.Row="3" Grid.Column="1" Content="=" FontWeight="Bold" Margin="5" x:Name="btnEquals" Click="Compute_Click"/>
             </Grid>
-            <!-- Buttons -->
+            
+            <!-- Memory Buttons -->
+            <Grid Margin="20, 0, 20, 20" Height="120" Width="40" Background="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="C" FontWeight="Bold" Margin="5" x:Name="btnClean" Click="MemOp_Click"/>
+                <Button Grid.Row="1" Content="CE" FontWeight="Bold" Margin="5" x:Name="btnCleanEntry" Click="MemOp_Click"/>
+                <Button Grid.Row="2" Content="OFF" FontWeight="Bold" Margin="5" x:Name="btnOFF" Click="Power_Click"/>
+            </Grid>
+
+            <!-- Operations Buttons -->
+            <Grid Margin="10, 0, 20, 20" Height="120" Width="110" Background="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Content="EXP" FontWeight="Bold" Margin="5" x:Name="btnExp" Click="ComputeOP_Click"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="SQRT" FontWeight="Bold" Margin="5" x:Name="btnSqrt" Click="ComputeOP_Click"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="SIN" FontWeight="Bold" Margin="5" x:Name="btnSin" Click="ComputeOP_Click"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="COS" FontWeight="Bold" Margin="5" x:Name="btnCos" Click="ComputeOP_Click"/>
+                <Button Grid.Row="2" Grid.Column="0" Content="LOG" FontWeight="Bold" Margin="5" x:Name="btnLog" Click="ComputeOP_Click"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="1/x" FontWeight="Bold" Margin="5" x:Name="btnRecip" Click="ComputeOP_Click"/>
+            </Grid>
         </StackPanel>
     </StackPanel>
 </Window>
